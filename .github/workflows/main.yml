@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy Static Site
     steps:
-      - run: ls -altr
-      - run: npm install
-      - run: npm run build
+      - id: Build
+        run: |
+          pwd
+          ls -altr 
+          npm install 
+          npm run build
+        
