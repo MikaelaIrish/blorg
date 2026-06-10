@@ -1,0 +1,12 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-site:
+    runs-on: ubuntu-latest
+    name: Deploy Static Site
+    steps:
+      - run: npm install
+      - run: npm run build
