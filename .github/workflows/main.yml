@@ -15,9 +15,9 @@ jobs:
       - id: Checkout
         uses: actions/checkout@v4
       - id: Build
-        run: |
-          npm content
+        run: |          
           npm install 
+          npm run content
           npm run build
       - id: Upload
         uses: actions/upload-pages-artifact@v3
