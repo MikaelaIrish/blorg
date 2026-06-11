@@ -16,6 +16,7 @@ jobs:
         uses: actions/checkout@v4
       - id: Build
         run: |
+          npm content
           npm install 
           npm run build
       - id: Upload
