@@ -27,8 +27,6 @@ for (const i in process) {
     })
 }
 
-console.log(output)
-
 fs.writeJsonSync("./public/content/blog/meta.json", output, {spaces: 4})
 
 

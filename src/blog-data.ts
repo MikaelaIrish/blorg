@@ -8,6 +8,8 @@ interface BlogItem {
     author: string
     timestamp: Date;
     keywords: string[];
+    description: string;
+    headerImage: string;
     next: string | null;
     previous: string | null;
 }
@@ -25,6 +27,7 @@ export const emptydata: BlogData = {
 function parseItem(json: any): BlogItem {
     return {
         ...json,
+        headerImage: json["header-image"],
         timestamp: new Date(json.timestamp)
     }
 }

@@ -14,7 +14,6 @@ function App() {
         <BlogContext value={blogData}>
             <BlogEntry id={blogData.order[0]}/>
         </BlogContext>
-
     )
 }
 
