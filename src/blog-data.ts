@@ -33,7 +33,6 @@ function parseItem(json: any): BlogItem {
 }
 
 function parseBlogData(json: string): BlogData {
-    console.log(json)
     const items: BlogItem[] = JSON.parse(json)
     const data: BlogData = {
         items: new Map<string, BlogItem>(),
@@ -49,17 +48,17 @@ function parseBlogData(json: string): BlogData {
 }
 
 export async function loadBlogs(): Promise<BlogData> {
-    return fetch("./content/blog/meta.json")
+    return fetch("/content/blog/meta.json")
         .then(meta => meta.text())
         .then(parseBlogData)
 }
 
 export function getBlogPath(item: BlogItem | undefined): string {
     if (item === undefined) {
-        return "./content/notFound.md"
+        return "/content/notFound.md"
     }
 
-    return "./content/blog/" + item.id + ".md"
+    return "/content/blog/" + item.id + ".md"
 }
 
 export async function getBlogContent(item: BlogItem | undefined, callback: (a: string) => void) {
