@@ -2,6 +2,8 @@ import {createContext} from "react";
 // @ts-expect-error the module works
 import metadataParser from "markdown-yaml-metadata-parser";
 
+export const ARCHIVE_SIZE = 5;
+
 interface BlogItem {
     id: string;
     title: string;

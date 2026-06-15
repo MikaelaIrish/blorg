@@ -29,16 +29,20 @@ const BlogEntry: React.FC<BlogProps> = (props: BlogProps) => {
     return (
         <div className={"blogEntry"}>
             <div className={"nextPrev"}>
-                <div><Link to={"/blog/" + (previous ? previous?.id : blogId)}>
+                <div><Link className={"blog-link"} to={"/blog/" + (previous ? previous?.id : blogId)}>
                     {previous ? "↢ " + previous.title : ""}</Link>
                 </div>
-                <div><Link to={"/blog/" + (next ? next?.id : blogId)}>
+                <div><Link className={"blog-link"} to={"/blog/" + (next ? next?.id : blogId)}>
                     {next ? next.title + " ↣" : ""}
                 </Link></div>
             </div>
-            <div>{blogItem?.title} </div>
-            <div>{blogItem?.timestamp.toLocaleDateString()}</div>
-            <div>{blogItem?.keywords}</div>
+            <div className={"blog-header"}>
+                <div className={"title"}>{blogItem?.title} </div>
+                <div>{blogItem?.timestamp.toLocaleDateString()}</div>
+                <div className={"subtitle"}> {blogItem?.description}</div>
+                <div className={"keywords"}>{blogItem?.keywords}</div>
+            </div>
+
             <MarkdownHooks fallback={"<div>Loading</div>"}>
                 {content}
             </MarkdownHooks>
