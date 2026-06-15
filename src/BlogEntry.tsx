@@ -21,7 +21,7 @@ const BlogEntry: React.FC<BlogProps> = (props: BlogProps) => {
 
     useEffect(() => {
         getBlogContent(blogItem, setContent)
-    }, [blogId]);
+    }, [blogItem]);
 
     const previous = blogItem?.previous != null ? blogdata?.items.get(blogItem.previous) : undefined;
     const next = blogItem?.next != null ? blogdata?.items.get(blogItem.next) : undefined;
