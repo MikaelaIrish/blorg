@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import {ARCHIVE_SIZE, BlogContext, type BlogData, emptydata, loadBlogs} from "./blog-data.ts";
 import BlogEntry from "./BlogEntry.tsx";
 import {useEffect, useState} from "react";

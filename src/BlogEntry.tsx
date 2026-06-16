@@ -1,5 +1,5 @@
 import {MarkdownHooks} from "react-markdown";
-import "./App.css";
+import "./App.scss";
 import {useContext, useEffect, useState} from "react";
 import {BlogContext, getBlogContent} from "./blog-data.ts";
 import {Link, useParams} from "react-router";
