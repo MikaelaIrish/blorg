@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 /public/content/blog/meta.json
+/bren.iml
+/bren/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+/bren/.gradle/*
