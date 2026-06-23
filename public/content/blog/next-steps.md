@@ -15,6 +15,7 @@ Currently I'm using applying much of any styling to the actual markdown content 
 * I really want to find a nice font first - something easy on the eye and san-serif.
 * Update the bullet style to match the sidebar.
 * make the content keywords more distinct (as well as make them linkable - see below).
+* I have a header-image field set in my MD metadata... I should do something with it.  And figure out an elegant image-routing bit.
 
 ### Archives
 The more techy-side - I want to add an archives page - likely pages with links to previous posts.  I'd also like it to populate a list of all the keywords I've used, and for clicking of those to go to a filtered view.  Hopefully simple enough - building the additional page view is most of the work there, then defining /archive/ and /archive/*keywords* as React Routes.
