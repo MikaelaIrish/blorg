@@ -4,7 +4,7 @@ import metadataParser from "markdown-yaml-metadata-parser";
 
 export const ARCHIVE_SIZE = 5;
 
-interface BlogItem {
+export interface BlogItem {
     id: string;
     title: string;
     author: string

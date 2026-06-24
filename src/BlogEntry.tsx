@@ -1,8 +1,9 @@
-import {MarkdownHooks} from "react-markdown";
+import Markdown from "react-markdown";
 import "./App.scss";
 import {useContext, useEffect, useState} from "react";
 import {BlogContext, getBlogContent} from "./blog-data.ts";
 import {Link, useParams} from "react-router";
+import remarkGfm from "remark-gfm";
 
 interface BlogProps {
     id?: string
@@ -36,16 +37,17 @@ const BlogEntry: React.FC<BlogProps> = (props: BlogProps) => {
                     {next ? next.title + " ↣" : ""}
                 </Link></div>
             </div>
+            { blogItem?.headerImage != undefined ? <img/> : "" }
             <div className={"blog-header"}>
                 <div className={"title"}>{blogItem?.title} </div>
                 <div>{blogItem?.timestamp.toLocaleDateString()}</div>
                 <div className={"subtitle"}> {blogItem?.description}</div>
-                <div className={"keywords"}>{blogItem?.keywords}</div>
+                <div className={"keyword"}>{blogItem?.keywords}</div>
             </div>
 
-            <MarkdownHooks fallback={"<div>Loading</div>"}>
+            <Markdown remarkPlugins={[[remarkGfm, {singleTilde: false}]]}>
                 {content}
-            </MarkdownHooks>
+            </Markdown>
         </div>
     )
 }
