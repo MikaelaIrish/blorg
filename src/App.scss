@@ -1,4 +1,8 @@
-$title_darkgrey: #272631;
+$title_darkgrey: #302f3d;
+
+div {
+  font-family: Verdana, sans-serif;
+}
 
 .content {
   display: flex;
@@ -31,7 +35,7 @@ $title_darkgrey: #272631;
 .sidebar {
   flex-grow: 1;
   flex-shrink: 4;
-  margin: 35px;
+  margin: 100px;
 
   .title {
     margin-bottom: 10px;
