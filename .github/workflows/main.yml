@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-site:
+    runs-on: ubuntu-latest
+    steps:
+      - id: Checkout
+        uses: actions/checkout@v4
+      - id: Build
+        run: |          
+          npm install 
+          npm run content
+          npm run build
+      - id: Upload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+  deploy-site:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-site
+    steps:
+      - id: Deploy
+        uses: actions/deploy-pages@v4
+        
