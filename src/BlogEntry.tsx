@@ -4,6 +4,7 @@ import {useContext, useEffect, useState} from "react";
 import {BlogContext, getBlogContent} from "./blog-data.ts";
 import {Link, useParams} from "react-router";
 import remarkGfm from "remark-gfm";
+import Keywords from "./Keywords.tsx";
 
 interface BlogProps {
     id?: string
@@ -42,7 +43,7 @@ const BlogEntry: React.FC<BlogProps> = (props: BlogProps) => {
                 <div className={"title"}>{blogItem?.title} </div>
                 <div>{blogItem?.timestamp.toLocaleDateString()}</div>
                 <div className={"subtitle"}> {blogItem?.description}</div>
-                <div className={"keyword"}>{blogItem?.keywords}</div>
+                <Keywords keywords={new Set(blogItem?.keywords)}/>
             </div>
 
             <Markdown remarkPlugins={[[remarkGfm, {singleTilde: false}]]}>

@@ -48,7 +48,7 @@ function App() {
                         <Route path="/archive/:filter" element={<Archive />}/>
                         <Route path="/" element={<BlogEntry id={blogData.order[0]}/>}/>
                     </Routes>
-                    <div className={"footer"}>Copyright © Mikaela Irish. All rights reserved.</div>
+                    <div className={"footer"}>© {new Date().getFullYear() + ""} Mikaela Irish. All rights reserved.</div>
                 </div>
                 <Sidebar />
             </div>

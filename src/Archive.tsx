@@ -6,43 +6,50 @@ import Keywords from "./Keywords.tsx";
 const PAGE_SIZE = 30;
 
 interface ArchiveEntryProps {
-    item?: BlogItem
+    item?: BlogItem,
+    index: number
 }
 
-function ArchiveEntry({item}: ArchiveEntryProps): JSX.Element {
+function ArchiveEntry({item, index}: ArchiveEntryProps): JSX.Element {
     return (
-        <div className={"entry"}>
+        <div className={"entry " + (index % 2 == 1 ? "odd" : "even")}>
             {item?.headerImage != undefined ? <img/> : ""}
             <div>
                 <div>{item?.timestamp.toLocaleDateString()}</div>
                 <div className={"title"}><Link to={"/blog/" + item?.id}>{item?.title}</Link></div>
             </div>
             <div className={"subtitle"}>{item?.description}</div>
-            <div>{item?.keywords.map(key => <div className={"keyword"}>{key}</div>)}</div>
+            <Keywords keywords={new Set(item?.keywords)}/>
         </div>
     )
 }
 
 function Archive(): JSX.Element {
-    const { filter } = useParams()
+    const {filter} = useParams()
     const blogData = useContext(BlogContext)
-    const [page, ] = useState(0)
+    const [page,] = useState(0)
 
-    const keywordList = new Set(Array.from(blogData.items.values())
-        .flatMap(item => item.keywords).sort())
+    const keys = Array.from(blogData.items.values())
+        .flatMap(item => item.keywords).sort();
+    keys.unshift("all")
+    const keywordList = new Set(keys)
 
     const filtered = blogData.order.map(entry => blogData.items.get(entry))
         .filter(item => item != undefined)
-        .filter(item => filter != undefined ? item.keywords.includes(filter) : true)
+        .filter(item => filter != undefined && filter !== "all" ? item.keywords.includes(filter) : true)
         .map(item => item.id)
 
     return (
         <div className={"archive"}>
-            <Keywords keywords={keywordList}/>
+            <div className={"archive-keys"}><Keywords keywords={keywordList}/></div>
+            <div className={"title"}>
+                {filter == undefined || filter == "all" ? "All entries" : "Entries tagged with "} {filter == undefined || filter == "all" ? "" :
+                <em>{filter}</em>}
+            </div>
             <div className={"entries"}>
                 {Array.from(Array(Math.min(PAGE_SIZE, filtered.length)).keys())
                     .map(n => n + (page * PAGE_SIZE))
-                    .map(n => <ArchiveEntry item={blogData.items.get(filtered[n])}/>)}
+                    .map(n => <ArchiveEntry index={n + 1} item={blogData.items.get(filtered[n])}/>)}
             </div>
         </div>
     )

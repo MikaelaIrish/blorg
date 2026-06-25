@@ -53,31 +53,8 @@ li.prevEntry {
 
 .archive {
 
-  .keywords {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-
-    padding-bottom: 20px;
-
-    .keyword {
-      flex-grow: 1;
-      justify-self: flex-start;
-      text-align: center;
-    }
-  }
-
-  .entries {
-    display: flex;
-    flex-direction: column;
-    justify-items: flex-start;
-    width: 100%;
-
-    .entry {
+  .archive-keys {
+    .keywords {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
@@ -85,21 +62,59 @@ li.prevEntry {
       align-items: center;
       width: 100%;
       height: 100%;
+
       padding-bottom: 20px;
+
+      .keyword {
+        flex-grow: 1;
+        justify-self: flex-start;
+        text-align: center;
+        font-size: larger;
+      }
+    }
+  }
+
+  .entries {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .entry {
+      flex-grow: 0;
+      justify-content: center;
+      align-items: center;
+      display: inline;
+      width: 100%;
+      height: 100%;
+      margin: 20px;
+      flex-basis: 150px;
 
       .title {
         font-size: large;
-        min-width: 150px;
       }
 
       div {
-        flex-grow: 1;
+
       }
 
       .subtitle {
-        padding-left: 30px;
-        flex-grow: 4;
-        width: 600px;
+        font-style: normal;
+      }
+
+      .keywords {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+
+        .keyword {
+          justify-self: left;
+          text-align: center;
+          font-size: smaller;
+        }
       }
     }
   }
