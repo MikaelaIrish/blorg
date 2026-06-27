@@ -1,9 +1,10 @@
 import fs from "fs-extra";
+// @ts-expect-error - no dev dependency
 import metadataParser from "markdown-yaml-metadata-parser";
 
-var files = fs.readdirSync("./public/content/blog", { withFileTypes: true })
+const files = fs.readdirSync("./public/content/blog", { withFileTypes: true })
 
-var process = []
+let process = []
 
 for (const entry of files) {
     if (entry.name.endsWith(".md")) {
@@ -28,6 +29,8 @@ for (const i in process) {
 }
 
 fs.writeJsonSync("./public/content/blog/meta.json", output, {spaces: 4})
+
+
 
 
 
