@@ -38,17 +38,18 @@ const BlogEntry: React.FC<BlogProps> = (props: BlogProps) => {
                     {next ? next.title + " ↣" : ""}
                 </Link></div>
             </div>
-            { blogItem?.headerImage != undefined ? <img/> : "" }
+            {blogItem?.headerImage != undefined ? <img/> : ""}
             <div className={"blog-header"}>
                 <div className={"title"}>{blogItem?.title} </div>
                 <div>{blogItem?.timestamp.toLocaleDateString()}</div>
                 <div className={"subtitle"}> {blogItem?.description}</div>
                 <Keywords keywords={new Set(blogItem?.keywords)}/>
             </div>
-
-            <Markdown remarkPlugins={[[remarkGfm, {singleTilde: false}]]}>
-                {content}
-            </Markdown>
+            <div className={"blog-content"}>
+                <Markdown remarkPlugins={[[remarkGfm, {singleTilde: false}]]}>
+                    {content}
+                </Markdown>
+            </div>
         </div>
     )
 }

@@ -186,6 +186,12 @@ li.prevEntry {
     width: 100%;
   }
 
+  .blog-content {
+    img {
+      max-width: 800px;
+    }
+  }
+
   .title {
     font-size: xx-large;
   }
