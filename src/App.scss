@@ -139,8 +139,20 @@ li.prevEntry {
     font-size: large;
   }
 
+  .rss {
+    margin: 36px;
+  }
+
   .subtitle {
     margin-left: 20px;
+  }
+
+  .weblinks {
+    a {
+      margin: 10px;
+      width: 30px;
+      height: 30px;
+    }
   }
 }
 

@@ -19,8 +19,13 @@ function Sidebar(): JSX.Element {
                     </li>)
                 }
             </div>
-            <div>
+            <div className={"rss"}>
                 <a href="/xml/rss.xml"><img src="/content/images/rss.png" width="36" height="14"/></a>
+            </div>
+            <div className={"weblinks"}>
+                <div className={"title"}>Contacts</div>
+                <a rel="me" href="https://dice.camp/@paints_erratically"><img src="/content/images/mastodon-logo-black.svg"/></a>
+                <a rel="me" href="https://bsky.app/profile/paintserratically.bsky.social"><img src="/content/images/bluesk.svg"/></a>
             </div>
         </div>
     )
