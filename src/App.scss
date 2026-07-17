@@ -103,6 +103,13 @@ li.prevEntry {
         font-style: normal;
       }
 
+      .blog-content {
+        img {
+          max-width: 800px;
+          min-width: 400px;
+        }
+      }
+
       .keywords {
         display: flex;
         flex-direction: row;
