@@ -1,5 +1,5 @@
 import {type JSX, useContext} from "react";
-import {ARCHIVE_SIZE, BlogContext} from "./blog-data.ts";
+import {ARCHIVE_SIZE, BlogContext, getBlogItem, getBlogRoute} from "./blog-data.ts";
 import {Link} from "react-router";
 
 function Sidebar(): JSX.Element {
@@ -10,13 +10,17 @@ function Sidebar(): JSX.Element {
             <div>
                 <div className={"title"}>Previously</div>
                 {Array.from(Array(Math.min(blogData.order.length - 1, ARCHIVE_SIZE))
-                    .keys()).map((n) =>
-                    <li className={"prevEntry"}>
-                        <Link className={"blog-link"} to={"/blog/" + blogData.order[n + 1]}>
-                            {blogData?.items.get(blogData.order[n + 1])?.title}
-                        </Link>
-                        <div className={"subtitle"}>{blogData?.items.get(blogData.order[n + 1])?.description}</div>
-                    </li>)
+                    .keys()).map((n) => {
+                        const item = getBlogItem(blogData, blogData.order[n + 1]);
+                        const route = getBlogRoute(item);
+
+                        return (<li className={"prevEntry"}>
+                            <Link className={"blog-link"} to={route}>
+                                {item?.title}
+                            </Link>
+                            <div className={"subtitle"}>{item?.description}</div>
+                        </li>)
+                })
                 }
             </div>
             <div className={"rss"}>
@@ -24,8 +28,10 @@ function Sidebar(): JSX.Element {
             </div>
             <div className={"weblinks"}>
                 <div className={"title"}>Contacts</div>
-                <a rel="me" href="https://dice.camp/@paints_erratically"><img src="/content/images/mastodon-logo-black.svg"/></a>
-                <a rel="me" href="https://bsky.app/profile/paintserratically.bsky.social"><img src="/content/images/bluesk.svg"/></a>
+                <a rel="me" href="https://dice.camp/@paints_erratically"><img
+                    src="/content/images/mastodon-logo-black.svg"/></a>
+                <a rel="me" href="https://bsky.app/profile/paintserratically.bsky.social"><img
+                    src="/content/images/bluesk.svg"/></a>
             </div>
         </div>
     )

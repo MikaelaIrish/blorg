@@ -1,5 +1,5 @@
 import './App.scss'
-import {BlogContext, type BlogData, emptydata, loadBlogs} from "./blog-data.ts";
+import {BlogContext, type BlogData, canonicalId, emptydata, firstItem, loadBlogs} from "./blog-data.ts";
 import BlogEntry from "./BlogEntry.tsx";
 import {useEffect, useState} from "react";
 import {Link, Route, Routes} from "react-router";
@@ -44,9 +44,10 @@ function App() {
                     </div>
                     <Routes>
                         <Route path="/blog/:id" element={<BlogEntry id={undefined}/>}/>
+                        <Route path="/blog/:date/:id" element={<BlogEntry id={undefined} date={undefined}/>}/>
                         <Route path="/archive" element={<Archive />}/>
                         <Route path="/archive/:filter" element={<Archive />}/>
-                        <Route path="/" element={<BlogEntry id={blogData.order[0]}/>}/>
+                        <Route path="/" element={<BlogEntry canonicalId={canonicalId(firstItem(blogData))}/>}/>
                     </Routes>
                     <div className={"footer"}>© {new Date().getFullYear() + ""} Mikaela Irish. All rights reserved.</div>
                 </div>

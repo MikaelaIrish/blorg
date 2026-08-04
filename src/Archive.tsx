@@ -37,7 +37,6 @@ function Archive(): JSX.Element {
     const filtered = blogData.order.map(entry => blogData.items.get(entry))
         .filter(item => item != undefined)
         .filter(item => filter != undefined && filter !== "all" ? item.keywords.includes(filter) : true)
-        .map(item => item.id)
 
     return (
         <div className={"archive"}>
@@ -49,7 +48,7 @@ function Archive(): JSX.Element {
             <div className={"entries"}>
                 {Array.from(Array(Math.min(PAGE_SIZE, filtered.length)).keys())
                     .map(n => n + (page * PAGE_SIZE))
-                    .map(n => <ArchiveEntry index={n + 1} item={blogData.items.get(filtered[n])}/>)}
+                    .map(n => <ArchiveEntry index={n + 1} item={filtered[n]}/>)}
             </div>
         </div>
     )
