@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@atproto/api": "^0.20.34",
     "dotenv": "^17.4.2",
     "fs-extra": "^11.3.5",
     "gh-pages": "^6.3.0",

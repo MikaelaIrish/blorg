@@ -14,6 +14,7 @@ export interface BlogItem {
     headerImage: string;
     next: string | null;
     previous: string | null;
+    commentKey: string | null;
 }
 
 export interface BlogData {
