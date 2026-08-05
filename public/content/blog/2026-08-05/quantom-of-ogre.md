@@ -8,7 +8,7 @@ keywords:
 author: Mika
 description: James Bond, LLMs and Quantom Ogres
 header-image:
-commentKey:
+commentKey: 3msegbczw522m
 ---
 
 So that's been a while.  In my defence I was a) employed, b) ill and c) doing some backend work.  Turns out some idiot had set up these posts in an inconvenient way, so I had to go and fix her work!  The cheek of it!  Anyone, this is back, and potentially the first post you'll have seen, because it's the first one I'll have publicised.
