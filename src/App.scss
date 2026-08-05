@@ -1,4 +1,4 @@
-$title_darkgrey: #302f3d;
+$title_darkgrey: #393949;
 $title_lilac: #636181;
 
 div {
@@ -242,6 +242,10 @@ li.prevEntry {
       white-space : pre-wrap;
       padding-left: 5em;
       padding-right: 5em;
+    }
+
+    h1, h2, h3 {
+      color: $title_darkgrey;
     }
   }
 
