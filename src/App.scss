@@ -223,6 +223,12 @@ li.prevEntry {
       border-style: groove;
       max-width: 800px;
     }
+
+    pre {
+      white-space : pre-wrap;
+      padding-left: 5em;
+      padding-right: 5em;
+    }
   }
 
   .title {
