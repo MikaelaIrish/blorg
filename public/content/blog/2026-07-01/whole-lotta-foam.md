@@ -21,7 +21,8 @@ So I had a big decision - and that, as ever is scale.  Because of a back-of-the-
 
 ![Horrible, horrible stuff](/content/blog/images/space_map.png)
 
-Cover is simpler in Lancer than Battletech as the former doesn't really deal with elevation in any way (although I plan to codify some rules I've used in the past).  So I've thrown together a bunch of Size 1/2/3 areas of soft cover/difficult terrain and hard cover/elevation out of pre-cut MDF tiles and XPS foam - the latter being textured with rolled-up aluminium foil and a half-brick (no, really) then slathered with a mix of matte Mod Podge and Vandyke brown to seal and prime.
+Cover is simpler in Lancer than Battletech as the former doesn't really deal with elevation in any way (although I plan to codify some rules I've used in the past).  Spnpm
+o I've thrown together a bunch of Size 1/2/3 areas of soft cover/difficult terrain and hard cover/elevation out of pre-cut MDF tiles and XPS foam - the latter being textured with rolled-up aluminium foil and a half-brick (no, really) then slathered with a mix of matte Mod Podge and Vandyke brown to seal and prime.
 
 Both sets of terrain elements were then sprayed with Color Forge Hyrax Brown, then opposing zenithal sprays of Midwinter Blue and Convict Yellow to get some interesting lighting going on.  Finally I drybrushed with a warm grey, varnished and called it good.
 

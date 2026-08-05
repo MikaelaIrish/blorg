@@ -4,6 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://blog.polyhedraloverlords.com",
+  "packageManager": "pnpm@11.20.0",
+  "devEngines": {
+    "runtime": { "name": "node", "version": "^24.0.0", "onFail": "download" }
+  },
   "scripts": {
     "content": "node build_meta.ts && tsx rss.ts",
     "dev": "vite",

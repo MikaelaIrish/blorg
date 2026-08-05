@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+.pnpm-store/
+.pnpm-debug.log
 
 # Editor directories and files
 .vscode/*
@@ -27,3 +29,5 @@ dist-ssr
 /bren/.gradle/buildOutputCleanup/buildOutputCleanup.lock
 /bren/.gradle/*
 /public/xml/rss.xml
+
+

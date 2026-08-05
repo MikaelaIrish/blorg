@@ -12,15 +12,14 @@ jobs:
   build-site:
     runs-on: ubuntu-latest
     steps:
-      - id: Checkout
-        uses: actions/checkout@v4
-      - id: Build
-        run: |          
-          npm install 
-          npm run content
-          npm run build
-      - id: Upload
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v3
+      - uses: pnpm/setup@v2
+      - run: |          
+          pnpm install
+          pnpm run content
+          pnpm run build
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: dist/
   deploy-site:
