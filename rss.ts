@@ -9,9 +9,7 @@ const ROOT = process.env.PUBLIC_URL
 
 const files = fs.readdirSync("./public/content/blog", { withFileTypes: true })
 
-if (! fs.exists("./public/xml")) {
-    fs.mkdirSync("./public/xml")
-}
+fs.mkdirSync("./public/xml")
 
 let toProcess: any[] = []
 
@@ -58,7 +56,7 @@ ${ toProcess.map(x => item(x)).join("\n") }
 
 const xml = rss();
 
-fs.writeFileSync("./public/xml/rss.xml", xml)
+fs.writeFileSync("./public/xml/rss.xml", xml, { flag: "w"})
 
 
 
