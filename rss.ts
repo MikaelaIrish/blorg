@@ -9,7 +9,9 @@ const ROOT = process.env.PUBLIC_URL
 
 const files = fs.readdirSync("./public/content/blog", { withFileTypes: true })
 
-fs.mkdirSync("./public/xml")
+if (! fs.exists("./public/xml")) {
+    fs.mkdirSync("./public/xml")
+}
 
 let toProcess: any[] = []
 
