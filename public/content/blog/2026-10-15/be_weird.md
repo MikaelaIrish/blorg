@@ -1,6 +1,6 @@
 ---
 title: Be Weird
-timestamp: 2026-10-15 07:44
+timestamp: 2026-10-15T07:44:00.000Z
 keywords:
   - thoughts
 author: Mika
