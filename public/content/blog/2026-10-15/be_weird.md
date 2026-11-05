@@ -6,7 +6,7 @@ keywords:
 author: Mika
 description: Of voices, identity and bland copies
 header-image:
-commentKey: 
+commentKey: 3mxvj2ih7hk2t
 ---
 Yes, it's been a couple of months.  Job searching doesn't help side projects, although that *might* be over?  It's certainly in a bit of an odd state right now.
 
